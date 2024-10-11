@@ -1,36 +1,36 @@
 import math
 from math import sin, cos, tan
 def add():
-    number = int(input("Please enter the first number to your addition:"))
-    number1 = int(input("Plese enter the second number to your addition:"))
+    number = float(input("Please enter the first number to your addition:"))
+    number1 = float(input("Plese enter the second number to your addition:"))
     numresult = number + number1 
     print("Your operation result is", numresult)
 
 
 
 def subtract():
-    subnum = int(input("Please enter the first number to your subtraction:"))
-    subnum1 = int(input("Please enter the second number to your subtraction:"))
+    subnum = float(input("Please enter the first number to your subtraction:"))
+    subnum1 = float(input("Please enter the second number to your subtraction:"))
     subresult = subnum + subnum1
     print("Your operation result is", subresult)
 
 
 def multiply():
-    multnumber = int(input("Please enter the first number to your multiplication:"))
-    multnumber1 = int(input("Please enter the second number to your multiplication:"))
+    multnumber = float(input("Please enter the first number to your multiplication:"))
+    multnumber1 = float(input("Please enter the second number to your multiplication:"))
     multresult = multnumber * multnumber1
     print("Your operation result is", multresult)
 
 def div():
-    divnum = int(input("Please enter the first number to your division:"))
-    divnum1 = int(input("Please enter the second number to your division:"))
+    divnum = float(input("Please enter the first number to your division:"))
+    divnum1 = float(input("Please enter the second number to your division:"))
     try:
         print(divnum/divnum1)
     except ZeroDivisionError:
         print("Error. It is mathematically impossible to divide by zero.")
 
 def square():
-    squarenum = int(input("Please enter the number to find the square root for:"))
+    squarenum = float(input("Please enter the number to find the square root for:"))
     squareresult = math.sqrt(squarenum)
     print("The result of your operation is", squareresult)
 
@@ -55,6 +55,13 @@ def tan():
     tan_result = math.tan(tan_number_radian)
     print("The tangent of", tan_number, "is", tan_result)
 
+
+def log():
+    loginput = float(input("Enter the number you would like to find the logarithmics of:"))
+    logbase = float(input("Enter the base of your logarithmics:"))
+    logresult = math.log(loginput, logbase)
+    print("The logarithmic of", loginput, "with a base of", logbase, "is", logresult)
+
 def main_menu():
     while True:
         print("Welcome to the Scientific Calculator Program")
@@ -65,7 +72,8 @@ def main_menu():
         print("5. Square Root")
         print("6. Sine")
         print("7. Cosin")
-        print("8.Tangent")
+        print("8. Tangent")
+        print("9. Logarithmics")
         userchoice = input("Enter your choice")
         if userchoice == "1":
             add()
@@ -83,6 +91,8 @@ def main_menu():
             cos()
         elif userchoice == "8":
             tan()
+        elif userchoice == "9":
+            log()
         else:
             print("Invalid option, try again")
             continue
