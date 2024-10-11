@@ -1,65 +1,111 @@
 import math
 from math import sin, cos, tan
 def add():
-    number = float(input("Please enter the first number to your addition:"))
-    number1 = float(input("Plese enter the second number to your addition:"))
-    numresult = number + number1 
+    try:
+        number = float(input("Please enter the first number to your addition:"))
+        number1 = float(input("Plese enter the second number to your addition:"))
+        numresult = number + number1
+    except ValueError:
+        print("Invalid value, use a number")
+        print("You will be sent back to the main menu") 
+        main_menu()
     print("Your operation result is", numresult)
 
 
 
+
 def subtract():
-    subnum = float(input("Please enter the first number to your subtraction:"))
-    subnum1 = float(input("Please enter the second number to your subtraction:"))
-    subresult = subnum + subnum1
+    try:
+        subnum = float(input("Please enter the first number to your subtraction:"))
+        subnum1 = float(input("Please enter the second number to your subtraction:"))
+        subresult = subnum + subnum1
+    except ValueError:
+        print("Invalid value, use a number")
+        print("You will be sent back to the main menu") 
+        main_menu()
     print("Your operation result is", subresult)
 
 
 def multiply():
-    multnumber = float(input("Please enter the first number to your multiplication:"))
-    multnumber1 = float(input("Please enter the second number to your multiplication:"))
-    multresult = multnumber * multnumber1
+    try:
+        multnumber = float(input("Please enter the first number to your multiplication:"))
+        multnumber1 = float(input("Please enter the second number to your multiplication:"))
+        multresult = multnumber * multnumber1
+    except ValueError:
+        print("Invalid value, use a number")
+        print("You will be sent back to the main menu") 
+        main_menu()
     print("Your operation result is", multresult)
 
 def div():
-    divnum = float(input("Please enter the first number to your division:"))
-    divnum1 = float(input("Please enter the second number to your division:"))
+    try:
+        divnum = float(input("Please enter the first number to your division:"))
+        divnum1 = float(input("Please enter the second number to your division:"))
+    except ValueError:
+        print("Invalid value, use a number")
+        print("You will be sent back to the main menu") 
+        main_menu()
     try:
         print(divnum/divnum1)
     except ZeroDivisionError:
         print("Error. It is mathematically impossible to divide by zero.")
 
 def square():
-    squarenum = float(input("Please enter the number to find the square root for:"))
-    squareresult = math.sqrt(squarenum)
+    try:
+        squarenum = float(input("Please enter the number to find the square root for:"))
+        squareresult = math.sqrt(squarenum)
+    except ValueError:
+        print("Invalid value, use a number")
+        print("You will be sent back to the main menu") 
+        main_menu()
     print("The result of your operation is", squareresult)
 
 
 
 def sin():
-    sin_number = float(input("Please enter the number for your sin operation:"))
-    sin_number_radian = math.radians(sin_number)
-    sin_result = math.sin(sin_number_radian)
+    try:    
+        sin_number = float(input("Please enter the number for your sin operation:"))
+        sin_number_radian = math.radians(sin_number)
+        sin_result = math.sin(sin_number_radian)
+    except ValueError:
+        print("Invalid value, use a number")
+        print("You will be sent back to the main menu") 
+        main_menu()
     print("The sine of", sin_number, "is", sin_result)
 
 def cos():
-    cos_number = float(input("Please enter the number for your cos operation:"))
-    cos_number_radian = math.radians(cos_number)
-    cos_result = math.cos(cos_number_radian)
+    try:
+        cos_number = float(input("Please enter the number for your cos operation:"))
+        cos_number_radian = math.radians(cos_number)
+        cos_result = math.cos(cos_number_radian)
+    except ValueError:
+        print("Invalid value, use a number")
+        print("You will be sent back to the main menu") 
+        main_menu()
     print("The cosine of", cos_number, "is", cos_result)
 
 
 def tan():
-    tan_number = float(input("Please enter the number for your tan operation:"))
-    tan_number_radian = math.radians(tan_number)
-    tan_result = math.tan(tan_number_radian)
+    try:
+        tan_number = float(input("Please enter the number for your tan operation:"))
+        tan_number_radian = math.radians(tan_number)
+        tan_result = math.tan(tan_number_radian)
+    except ValueError:
+        print("Invalid value, use a number")
+        print("You will be sent back to the main menu") 
+        main_menu()
     print("The tangent of", tan_number, "is", tan_result)
 
 
 def log():
-    loginput = float(input("Enter the number you would like to find the logarithmics of:"))
-    logbase = float(input("Enter the base of your logarithmics:"))
-    logresult = math.log(loginput, logbase)
+    try:
+        loginput = float(input("Enter the number you would like to find the logarithmics of:"))
+        logbase = float(input("Enter the base of your logarithmics:"))
+        logresult = math.log(loginput, logbase)
+    except ValueError:
+        print("Invalid value, use a number")
+        print("You will be sent back to the main menu") 
+        main_menu()
     print("The logarithmic of", loginput, "with a base of", logbase, "is", logresult)
 
 def main_menu():
@@ -74,6 +120,7 @@ def main_menu():
         print("7. Cosin")
         print("8. Tangent")
         print("9. Logarithmics")
+        print("If you wish to exit the program, type q")
         userchoice = input("Enter your choice")
         if userchoice == "1":
             add()
@@ -93,6 +140,9 @@ def main_menu():
             tan()
         elif userchoice == "9":
             log()
+        elif userchoice == "q":
+            print("Goodbye")
+            break
         else:
             print("Invalid option, try again")
             continue
